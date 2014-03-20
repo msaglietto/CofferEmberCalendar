@@ -1,0 +1,30 @@
+<nav class="navbar" role="navigation">
+  {{formatDate model format="MMMM YYYY"}}
+  <div class="btn-group">
+    <button type="button" class="btn btn-default navbar-btn" {{action "goTo" lastYear}}>{{bs-icon name="backward"}} Year</button>
+    <button type="button" class="btn btn-default navbar-btn" {{action "goTo" lastMonth}}>{{bs-icon name="chevron-left"}} Month</button>
+    <button type="button" class="btn btn-default navbar-btn" {{action "goTo" today}}>Today</button>
+    <button type="button" class="btn btn-default navbar-btn" {{action "goTo" nextMonth}}>Month {{bs-icon name="chevron-right"}}</button>
+    <button type="button" class="btn btn-default navbar-btn" {{action "goTo" nextYear}}>Year {{bs-icon name="forward"}}</button>
+  </div>
+</nav>
+<div>
+  <div class="row cal-row-head">
+    <div class="col-xs-1 cal-col-1">Sunday</div>
+    <div class="col-xs-1 cal-col-1">Monday</div>
+    <div class="col-xs-1 cal-col-1">Tuesday</div>
+    <div class="col-xs-1 cal-col-1">Wednesday</div>
+    <div class="col-xs-1 cal-col-1">Thursday</div>
+    <div class="col-xs-1 cal-col-1">Friday</div>
+    <div class="col-xs-1 cal-col-1">Saturday</div>
+  </div>
+  <div class="row cal-month-box">
+  {{#with model as selected}}
+    {{#each days}}
+      <div class="col-xs-1 cal-col-1">
+        {{calendar-day date=this selected=selected action="goTo"}}
+      </div>
+    {{/each}}
+  {{/with}}
+  </div>
+</div>

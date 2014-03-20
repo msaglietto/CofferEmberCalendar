@@ -5,3 +5,23 @@
 @import 'nib'
 
 // place your imports and styles here
+.cal-row-head
+  font-weight bold
+  text-align center
+
+.cal-col-1
+  width (100/7)%
+  border: 1px solid grey
+  padding: 0
+  :hover
+    background-color: #F5F5F5
+
+.cal-day
+  cursor: pointer
+
+  &.today
+    background-color: yellow
+  &.selected
+    background-color: lightblue
+  &.disabled
+    background-color: lightgray

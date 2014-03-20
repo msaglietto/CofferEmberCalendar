@@ -3,3 +3,4 @@
 # `scaffolt controller application`
 # `scaffolt objectcontroller user`
 # `scaffolt arraycontroller user`
+require 'controllers/Calendar'

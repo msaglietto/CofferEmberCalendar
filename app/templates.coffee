@@ -3,3 +3,4 @@
 # `scaffolt template user/index`
 require 'templates/application'
 require 'templates/index'
+require 'templates/calendar'

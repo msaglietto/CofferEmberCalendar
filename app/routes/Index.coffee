@@ -10,14 +10,10 @@ App = require 'app'
 ###
 module.exports = App.IndexRoute = Ember.Route.extend
   ###*
-    Our model, just some info message as of example and all the font awesome icons
+    Index route will just redirect to calendar
 
     @inheritDoc
   ###
-  model: (params) ->
-    infoMessage: """
-      Compiled on branch #{App.CONFIG.compilation.gitBranch}
-      at #{App.CONFIG.compilation.date.toTimeString()}
-      on #{App.CONFIG.compilation.date.toDateString()}
-      """
-    iconNames: Ember.A(App.BsIconComponent.NAMES)
+  beforeModel : () ->
+    date = new Date()
+    @.transitionTo('calendar', {year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate()})

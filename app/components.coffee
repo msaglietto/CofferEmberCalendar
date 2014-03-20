@@ -4,3 +4,6 @@
 # bs-icon
 require 'views/components/BsIcon'
 require 'templates/components/bs-icon'
+# calendar-day
+require 'views/components/CalendarDay'
+require 'templates/components/calendar-day'
